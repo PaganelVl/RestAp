@@ -1,0 +1,43 @@
+{% load static %}
+<div class="testimonial_area overlay ">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-50">
+                    <p>Testimonials</p>
+                    <h3>Our Customer’s Say</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="testmonial_active owl-carousel">
+                    {% for testimonial in testimonials %}
+                        <div class="single_carousel">
+                            <div class="single_testmonial ">
+                                <div class="author_opinion">
+                                    <p>“{{testimonial.quote}}</p>
+                                </div>
+                                <div class="testmonial_author">
+                                    <div class="thumb">
+                                        <img src="{{MEDIA_URL}}{{ testimonial.avatar.url }}" alt="{{testimonial.customer_name}}">
+                                    </div>
+                                    <div class="name">
+                                        <h3>{{testimonial.customer_name}}/h3>
+                                        <div class="icon">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
